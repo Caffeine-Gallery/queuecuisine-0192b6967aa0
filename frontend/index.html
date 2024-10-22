@@ -9,15 +9,21 @@
 <body>
     <header>
         <h1>Our Restaurant</h1>
+        <div id="auth">
+            <button id="login">Login as Admin</button>
+            <button id="logout" style="display: none;">Logout</button>
+        </div>
     </header>
+    <nav>
+        <a href="#menu">Menu</a>
+        <a href="#waitlist">Waitlist</a>
+        <a href="#directions">Directions</a>
+        <a href="#contact">Contact</a>
+    </nav>
     <main>
         <section id="menu">
             <h2>Menu</h2>
             <ul id="menu-list"></ul>
-        </section>
-        <section id="auth">
-            <button id="login">Login as Admin</button>
-            <button id="logout" style="display: none;">Logout</button>
         </section>
         <section id="waitlist">
             <h2>Join Waitlist</h2>
@@ -28,6 +34,17 @@
             </form>
             <h3>Waitlist Information</h3>
             <div id="waitlist-display"></div>
+        </section>
+        <section id="directions">
+            <h2>Directions</h2>
+            <p>Find us at: 123 Main St, Anytown, USA</p>
+            <a href="https://maps.google.com" target="_blank">Get Directions</a>
+        </section>
+        <section id="contact">
+            <h2>Contact Information</h2>
+            <p>Phone: (555) 123-4567</p>
+            <p>Email: info@ourrestaurant.com</p>
+            <p>Hours: Mon-Sat 11am-10pm, Sun 12pm-9pm</p>
         </section>
     </main>
     <script type="module" src="index.js"></script>
