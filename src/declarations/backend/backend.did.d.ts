@@ -11,9 +11,10 @@ export interface MenuItem {
 }
 export interface _SERVICE {
   'addMenuItem' : ActorMethod<[string, bigint, string], bigint>,
-  'addToWaitlist' : ActorMethod<[string, string], undefined>,
+  'addToWaitlist' : ActorMethod<[string, string], bigint>,
   'getMenu' : ActorMethod<[], Array<MenuItem>>,
   'getWaitlist' : ActorMethod<[], Array<Customer>>,
+  'getWaitlistPosition' : ActorMethod<[string], [] | [bigint]>,
   'removeFromWaitlist' : ActorMethod<[string], boolean>,
 }
 export declare const idlFactory: IDL.InterfaceFactory;

@@ -12,8 +12,9 @@ type Customer =
  };
 service : {
   addMenuItem: (text, nat, text) -> (nat);
-  addToWaitlist: (text, text) -> ();
+  addToWaitlist: (text, text) -> (nat);
   getMenu: () -> (vec MenuItem) query;
   getWaitlist: () -> (vec Customer) query;
+  getWaitlistPosition: (text) -> (opt nat) query;
   removeFromWaitlist: (text) -> (bool);
 }

@@ -43,16 +43,22 @@ actor Restaurant {
   };
 
   // Waitlist functions
-  public func addToWaitlist(name: Text, phoneNumber: Text) : async () {
+  public func addToWaitlist(name: Text, phoneNumber: Text) : async Nat {
     let newCustomer : Customer = {
       name;
       phoneNumber;
     };
     waitlist := Array.append(waitlist, [newCustomer]);
+    waitlist.size()
   };
 
   public query func getWaitlist() : async [Customer] {
     waitlist
+  };
+
+  public query func getWaitlistPosition(phoneNumber: Text) : async ?Nat {
+    let position = Array.indexOf<Customer>({ name = ""; phoneNumber }, waitlist, func (a, b) { a.phoneNumber == b.phoneNumber });
+    Option.map(position, func (p : Nat) : Nat { p + 1 })
   };
 
   public func removeFromWaitlist(phoneNumber: Text) : async Bool {

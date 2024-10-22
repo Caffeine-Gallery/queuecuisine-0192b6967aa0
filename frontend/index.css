@@ -14,12 +14,14 @@ header {
 
 main {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     padding: 2rem;
 }
 
 section {
     width: 45%;
+    margin-bottom: 2rem;
 }
 
 h2 {
@@ -58,4 +60,14 @@ button {
 
 button:hover {
     background-color: #555;
+}
+
+#auth {
+    width: 100%;
+    text-align: right;
+    margin-bottom: 1rem;
+}
+
+#auth button {
+    margin-left: 1rem;
 }
