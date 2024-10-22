@@ -1,0 +1,19 @@
+type MenuItem = 
+ record {
+   description: text;
+   id: nat;
+   name: text;
+   price: nat;
+ };
+type Customer = 
+ record {
+   name: text;
+   phoneNumber: text;
+ };
+service : {
+  addMenuItem: (text, nat, text) -> (nat);
+  addToWaitlist: (text, text) -> ();
+  getMenu: () -> (vec MenuItem) query;
+  getWaitlist: () -> (vec Customer) query;
+  removeFromWaitlist: (text) -> (bool);
+}
